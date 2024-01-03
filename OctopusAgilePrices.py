@@ -1,29 +1,3 @@
-"""
-Agile Pricing Data Extractor
-
-Author: Alloys
-Date: January 3, 2024
-
-Description:
-This script retrieves Agile pricing data using the OctopusAgile library and saves it to a CSV file. The user can customize the date range selection, choose whether to save the data to a file, and print the results. The script is designed to extract date-time and rate information for Agile pricing within the specified date range.
-
-Usage:
-- Set the 'date_range_selection_method' variable to either of the below to choose the desired date range.
-    - 'Range' (A specified Date Range in YYYY_MM_DD format, note this cannot fetch more than a year worth of data)
-    - 'Current' (Data from Midnight today until latest data point [After 4pm the following day's prices are published])
-    - 'Now' (Half hourly time slots from the current time rounded down for 'num_periods' amount of slots)
-- Set the 'should_save_file' variable to 'True' if you want to save the data to a CSV file as specified, or 'False' otherwise.
-- Set the 'should_print_results' variable to 'True' if you want to print the extracted data, or 'False' otherwise.
-- Set the 'region_code' variable to the region you are in for localised prices (See https://en.wikipedia.org/wiki/Distribution_network_operator)
-
-Dependencies:
-- OctopusAgile library (ensure it is installed via pip: 'pip install OctopusAgile')
-- Python 3
-
-Note:
-Make sure to customize the 'region_code' variable according to your geographical location ('M' for example).
-"""
-
 from OctopusAgile import Agile
 from datetime import datetime, timedelta
 import csv
