@@ -2,7 +2,8 @@
 
 Agile Pricing Data Extractor
 
-Author: Alloys
+Author: AlloysRS
+
 Date: January 3, 2024
 
 Description:
