@@ -1,12 +1,13 @@
-from OctopusAgile import Agile
+from CustomAgile.CustomAgile import CustomAgile
 from datetime import datetime, timedelta
 import csv
 
 date_range_selection_method = "Now"
 should_save_file = False  
-should_print_results = True 
+should_print_results = True  
 region_code = 'M'
 num_periods = 4
+tariff_code = "AGILE-VAR-22-10-19" 
 
 def set_start_end_dates(date_range_selection):
     if date_range_selection == "Range":
@@ -35,8 +36,7 @@ def save_data_to_csv(csv_file_path, date_rate_dict):
     print(f'Data has been saved to {csv_file_path}')
 
 def main():
-
-    agile = Agile(region_code)
+    agile = CustomAgile(region_code, tariff_code)
     start_date, end_date = set_start_end_dates(date_range_selection_method)
     rates_data = agile.get_rates(start_date.strftime("%Y-%m-%dT%H:%M:%SZ"), end_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
 
